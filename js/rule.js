@@ -57,6 +57,9 @@ document.getElementById('genera').addEventListener('click', function() {
     ore = data.getHours() + ':'; 
     min = data.getMinutes() + ':'; 
     sec = data.getSeconds();
+    if ( sec < 10 ) {
+        sec = '0' + sec
+    }
     var dataCompleta = gg + mese + anno + ore + min + sec;
     document.getElementById('ora-creazione').innerHTML = dataCompleta
 
