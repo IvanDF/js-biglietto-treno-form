@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biglietto del treno</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        CALCOLATORE DINAMICO BLIGLIETTO
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <section class="richiesta-dati">
+            <form>
+                <label for="nome">Nome passeggero</label>
+                <input type="text" name="mame" id="nome" placeholder="Nome passeggero">
+                <label for="km">Km tratta</label>
+                <input type="number" name="km" id="km" placeholder="Km tratta">
+                <label for="eta">Quanti hanni hai?</label>
+                <select name="eta" id="eta">
+                    <option value="under18">Minore di 18 anni</option>
+                    <option value="over18">Maggiore di 18 anni</option>
+                    <option value="over65">Maggiore di 65 anni</option>
+                </select>
+                <button id="gen">Genera biglietto</button>
+                <button id="reset">Reset</button>
+            </form>
+        </section>
+        <section class="dati-utente">
+            <span id="nome-utente"></span>
+            <ul>
+                <li>
+                    Offerta <span id="sconto"></span>
+                </li>
+                <li>
+                    Carrozza <span id="carrozza"></span>
+                </li>
+                <li>
+                    Codice CP <span id="codice-cp"></span>
+                </li>
+                <li>
+                    Costo Biglietto <span id="costo-tot"></span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>
