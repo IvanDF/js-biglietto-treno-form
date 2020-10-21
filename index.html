@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biglietto del treno</title>
+    <!-- MAIN STYLE -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -17,7 +18,6 @@
     <main class="main">
 
         <section class="richiesta-dati">
-            <form>
                 <label for="nome">Nome passeggero</label>
                 <input type="text" name="mame" id="nome" placeholder="Nome passeggero">
                 <label for="km">Km tratta</label>
@@ -28,12 +28,15 @@
                     <option value="over18">Maggiore di 18 anni</option>
                     <option value="over65">Maggiore di 65 anni</option>
                 </select>
-                <button id="gen">Genera biglietto</button>
+                <button id="genera">Genera biglietto</button>
                 <button id="reset">Reset</button>
-            </form>
         </section>
         <section class="dati-utente">
-            <span id="nome-utente"></span>
+            <h3>
+                Nome utente
+                <span id="nome-utente"></span>
+            </h3>
+            
             <ul>
                 <li>
                     Offerta <span id="sconto"></span>
@@ -56,6 +59,8 @@
     <footer class="main-footer">
         <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
     </footer>
-    
+
+    <!-- JAVASCRIPT -->
+    <script src="./js/rule.js"></script>
 </body>
 </html>
