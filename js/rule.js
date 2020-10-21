@@ -2,14 +2,8 @@
  * CALCOLATORE COSTO DEL BIGLIETTO
  **********************************/
 
-genera.addEventListener('click', function() {
+     //  VARIABILI
 
-    //  VARIABILI
-
-    // FORM
-    var nome = document.getElementById('nome').value;
-    var km = document.getElementById('km').value;
-    var eta = document.getElementById('eta').value;
 
     // BIGLIETTO
     var nomeUtente = document.getElementById('nome-utente');
@@ -18,9 +12,12 @@ genera.addEventListener('click', function() {
     var codiceCp = document.getElementById('codice-cp');
     var costoTot = document.getElementById('costo-tot')
 
-    // BUTTONS
-    var genera = document.getElementById('genera');
-    var reset = document.getElementById('reset');
+document.getElementById('genera').addEventListener('click', function() {
+
+    // FORM
+    var nome = document.getElementById('nome').value;
+    var km = document.getElementById('km').value;
+    var eta = document.getElementById('eta').value;
 
     // CONTROLLO
 
@@ -29,14 +26,32 @@ genera.addEventListener('click', function() {
     codiceCp.innerHTML = Math.floor( Math.random() * ( 100000 - 90000 ) ) + 90000;
 
     // CALCOLO COSTO BIGLIETTO
+    var costoTratta = km * 0.21;
 
     if ( eta === 'under18') {
-        alert('ciao')
+        offerta.innerHTML = 'hai diritto allo sconto under 18'
+        costoTratta -= costoTratta * 0.20; 
+        costoTot.innerHTML = costoTratta.toFixed(2) + ' €';       
     } else if ( eta === 'over18' ) {
-        alert('nociao')
+        offerta.innerHTML = 'purtroppo non vi sono sconti applicabili'
+        costoTot.innerHTML = costoTratta.toFixed(2) + ' €';       
     } else if ( eta === 'over65' ) {
-        alert('ciaone')
+        offerta.innerHTML = 'hai diritto allo sconto over 65'
+        costoTratta -= costoTratta * 0.40; 
+        costoTot.innerHTML = costoTratta.toFixed(2) + ' €';       
+
     }
 
     nomeUtente.innerHTML = nome;
 });
+
+document.getElementById('reset').addEventListener( 'click', function() {
+
+    nomeUtente.innerHTML = ''
+    offerta.innerHTML = ''
+    carrozza.innerHTML = ''
+    codiceCp.innerHTML = ''
+    costoTot.innerHTML = ''
+
+});
+
