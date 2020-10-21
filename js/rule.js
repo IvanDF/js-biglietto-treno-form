@@ -13,12 +13,14 @@
     var costoTot = document.getElementById('costo-tot');
 
     var biglietto = document.getElementById('biglietto');
-
+    
+    // BOTTONE GENERA BIGLIETTO
 document.getElementById('genera').addEventListener('click', function() {
 
     // FORM
     var nome = document.getElementById('nome').value;
     var km = document.getElementById('km').value;
+    km = parseInt(km)
     var eta = document.getElementById('eta').value;
 
     // CONTROLLO
@@ -46,8 +48,28 @@ document.getElementById('genera').addEventListener('click', function() {
 
     nomeUtente.innerHTML = nome;
 
+    // DATA TIMBRO
+    var data = new Date();
+    var gg, mese, anno, ore, min, sec;
+    gg = data.getDate() + '/';
+    mese = data.getMonth() + 1 + '/';
+    anno = data.getFullYear() + ' '; 
+    ore = data.getHours() + ':'; 
+    min = data.getMinutes() + ':'; 
+    sec = data.getSeconds();
+    var dataCompleta = gg + mese + anno + ore + min + sec;
+    document.getElementById('ora-creazione').innerHTML = dataCompleta
+
     // SHOW
-    biglietto.className = biglietto.classList + " show";
+    if ( !isNaN(nome) ) {
+        alert('Nel campo "Nome passeggero" é stato inserito un carattere non valido, prego riprovare');
+    } else if ( isNaN(km) == true ) {
+        alert('Nel campo "Km tratta" non é stato inserito un numero, prego riprovare')
+    } else if ( eta == '' ) {
+        alert('Nel campo "Seleziona fascia di etá" non é stato selezionata alcuna opzione, prego riprovare')
+    } else {
+        biglietto.className = biglietto.classList + " show";
+    }
 });
 
 document.getElementById('reset').addEventListener( 'click', function() {
@@ -65,11 +87,9 @@ document.getElementById('reset').addEventListener( 'click', function() {
     costoTot.innerHTML = ''
 
     // HIDDEN
-    biglietto.className = biglietto.classList + "biglietto hidden";
+    biglietto.className = "biglietto hidden";
 
 
 });
-
-// BIGLIETTO
 
 
