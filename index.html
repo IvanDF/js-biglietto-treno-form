@@ -9,21 +9,18 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="main-header">
-        CALCOLATORE DINAMICO BLIGLIETTO
-    </header>
-
     <!-- MAIN -->
     <main class="main">
 
         <section class="richiesta-dati">
+            <h2 class="richiesta-title">Calcola ora il costo del tuo biglietto</h2>
                 <label for="nome">Nome passeggero</label>
-                <input type="text" name="mame" id="nome" placeholder="Nome passeggero">
+                <input type="text" name="mame" id="nome" placeholder="Nome passeggero" required>
                 <label for="km">Km tratta</label>
-                <input type="number" name="km" id="km" placeholder="Km tratta">
+                <input type="number" name="km" id="km" placeholder="Km tratta" required>
                 <label for="eta">Quanti hanni hai?</label>
-                <select name="eta" id="eta">
+                <select name="eta" id="eta" required>
+                    <option value="" selected disabled >Seleziona</option>
                     <option value="under18">Minore di 18 anni</option>
                     <option value="over18">Maggiore di 18 anni</option>
                     <option value="over65">Maggiore di 65 anni</option>
@@ -31,34 +28,34 @@
                 <button id="genera">Genera biglietto</button>
                 <button id="reset">Reset</button>
         </section>
-        <section class="dati-utente">
-            <h3>
-                Nome utente
-                <span id="nome-utente"></span>
-            </h3>
-            
-            <ul>
-                <li>
-                    Offerta <span id="sconto"></span>
-                </li>
-                <li>
-                    Carrozza <span id="carrozza"></span>
-                </li>
-                <li>
-                    Codice CP <span id="codice-cp"></span>
-                </li>
-                <li>
-                    Costo Biglietto <span id="costo-tot"></span>
-                </li>
-            </ul>
+        <section class="dati-passeggero">
+            <div id="biglietto" class="biglietto hidden">
+                <div class="banda"></div>
+                <div class="biglietto-dati">
+                    <ul class="info">
+                        <li>
+                            Nome utente <p id="nome-utente"></p>
+                        </li>
+                        <li>
+                            Carrozza <p id="carrozza"></p>
+                        </li>
+                        <li>
+                            Codice CP <p id="codice-cp"></p>
+                        </li>
+                    </ul>
+                    <ul class="info-extra">
+                        <li>
+                            Offerta <p id="sconto"></p>
+                        </li>
+                        <li>
+                            Costo Biglietto <p id="costo-tot"></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
     </main>
-
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
-    </footer>
 
     <!-- JAVASCRIPT -->
     <script src="./js/rule.js"></script>

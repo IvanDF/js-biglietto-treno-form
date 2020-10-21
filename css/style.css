@@ -1,7 +1,170 @@
 /* GENERAL SETTINGS */
 
+/* JS UTILITIES */
+
+.hidden {
+    opacity: 0;
+    left: 0;
+    transition: opacity .7s,
+                left 1s;
+}
+.show {
+    opacity: 1;
+    left: 45%;
+    transition: opacity .5s,
+                left 1s;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* MAIN */
+.main {
+    height: 100vh;
+    display: flex;
+}
+
+
+/* FORM RICHIESTA DATI */
+.richiesta-dati {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 450px;
+    box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, .5);
+    background: #ccc;
+}
+.richiesta-title {
+    font-size: 32px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.richiesta-dati label,
+.richiesta-dati input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin: 5px 0;
+}
+
+
+.richiesta-dati label {
+    opacity: 0;
+}
+
+.richiesta-dati input {
+    text-align: center;
+    font-size: 23px;
+    border: none;
+    outline: none;
+}
+
+.richiesta-dati input::placeholder {
+    text-align: center;
+    opacity: 1;
+    color: #000;
+}
+
+.richiesta-dati input:focus::placeholder {
+    color: #ddd;
+}
+
+.richiesta-dati select,
+.richiesta-dati button  {
+    margin: 0 auto;
+    display: block;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.richiesta-dati button {
+    cursor: pointer;
+    width: 200px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+
+/* DATI UTENTE */
+.dati-passeggero {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* BIGLIETTO */
+.dati-passeggero .biglietto {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: flex-end;
+    height: 350px;
+    width: 950px;
+    background: #fda;
+}
+
+/* BANDA  */
+
+.banda {
+    margin-left: 80px;
+    flex-basis: 80px;
+    background: rgb(19, 22, 3);
+}
+
+/* BIGLIETTO DATI */
+
+.biglietto-dati {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.biglietto-dati ul {
+    list-style: none;
+}
+
+.biglietto-dati .info,
+.biglietto-dati .info-extra {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.biglietto-dati .info {
+    margin-left: 60px;
+    width: 40%;
+}
+
+.biglietto-dati .info-extra {
+    width: 60%;
+}
+
+
+.dati-passeggero .info li,
+.dati-passeggero .info-extra li {
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.dati-passeggero .info li p,
+.dati-passeggero .info-extra li p {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.dati-passeggero .info-extra #sconto {
+    font-size: 18px;
 }

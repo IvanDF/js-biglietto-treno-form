@@ -10,7 +10,9 @@
     var offerta = document.getElementById('sconto');
     var carrozza = document.getElementById('carrozza');
     var codiceCp = document.getElementById('codice-cp');
-    var costoTot = document.getElementById('costo-tot')
+    var costoTot = document.getElementById('costo-tot');
+
+    var biglietto = document.getElementById('biglietto');
 
 document.getElementById('genera').addEventListener('click', function() {
 
@@ -43,15 +45,31 @@ document.getElementById('genera').addEventListener('click', function() {
     }
 
     nomeUtente.innerHTML = nome;
+
+    // SHOW
+    biglietto.className = biglietto.classList + " show";
 });
 
 document.getElementById('reset').addEventListener( 'click', function() {
 
+    // FORM
+    document.getElementById('nome').value = '';
+    document.getElementById('km').value = '';
+    document.getElementById('eta').value = '';
+
+    // BIGLIETTO
     nomeUtente.innerHTML = ''
     offerta.innerHTML = ''
     carrozza.innerHTML = ''
     codiceCp.innerHTML = ''
     costoTot.innerHTML = ''
 
+    // HIDDEN
+    biglietto.className = biglietto.classList + "biglietto hidden";
+
+
 });
+
+// BIGLIETTO
+
 
