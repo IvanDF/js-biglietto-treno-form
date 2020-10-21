@@ -13,12 +13,9 @@
     <main class="main">
 
         <section class="richiesta-dati">
-            <h2 class="richiesta-title">Calcola ora il costo del tuo biglietto</h2>
-                <label for="nome">Nome passeggero</label>
+            <h2 class="richiesta-title">Benvenuto su <br> <span>TRENIBOOLEANI</span></h2>
                 <input type="text" name="mame" id="nome" placeholder="Nome passeggero" required>
-                <label for="km">Km tratta</label>
                 <input type="number" name="km" id="km" placeholder="Km tratta" required>
-                <label for="eta">Quanti hanni hai?</label>
                 <select name="eta" id="eta" required>
                     <option value="" selected disabled >Seleziona</option>
                     <option value="under18">Minore di 18 anni</option>
@@ -29,8 +26,12 @@
                 <button id="reset">Reset</button>
         </section>
         <section class="dati-passeggero">
+            <div class="filter"></div>
             <div id="biglietto" class="biglietto hidden">
                 <div class="banda"></div>
+                <div class="banda-compagnia">
+                    <h1>TRENIBOOLEANI</h1>
+                </div>
                 <div class="biglietto-dati">
                     <ul class="info">
                         <li>
@@ -39,7 +40,7 @@
                         <li>
                             Carrozza <p id="carrozza"></p>
                         </li>
-                        <li>
+                        <li>    
                             Codice CP <p id="codice-cp"></p>
                         </li>
                     </ul>

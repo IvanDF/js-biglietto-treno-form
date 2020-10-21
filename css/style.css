@@ -1,5 +1,15 @@
 /* GENERAL SETTINGS */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
 /* JS UTILITIES */
 
 .hidden {
@@ -15,25 +25,14 @@
                 left 1s;
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: sans-serif;
-}
-
 /* MAIN */
 .main {
     height: 100vh;
     display: flex;
 }
 
-
 /* FORM RICHIESTA DATI */
+
 .richiesta-dati {
     z-index: 10;
     display: flex;
@@ -41,12 +40,26 @@ body {
     justify-content: center;
     flex-basis: 450px;
     box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, .5);
-    background: #ccc;
+    background: #ffe0a6;
 }
+
 .richiesta-title {
-    font-size: 32px;
+    font-family: monospace;
+    justify-self: self-start;
+    color: #dd6c55;
+    line-height: .7;
+    font-size: 39px;
+    font-weight: normal;
     text-align: center;
+    letter-spacing: 4px;
     padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.richiesta-title span {
+    font-weight: bold;
+    letter-spacing: 0;
+    font-size: 42px;
 }
 
 .richiesta-dati label,
@@ -63,6 +76,8 @@ body {
 }
 
 .richiesta-dati input {
+    background: #dd6c55;
+    color: #ffe0a6;
     text-align: center;
     font-size: 23px;
     border: none;
@@ -70,23 +85,30 @@ body {
 }
 
 .richiesta-dati input::placeholder {
+    color: #fdf0a9;
     text-align: center;
     opacity: 1;
-    color: #000;
 }
 
 .richiesta-dati input:focus::placeholder {
-    color: #ddd;
+    color: #ffd0a6;
 }
 
 .richiesta-dati select,
 .richiesta-dati button  {
+    background: #dd6c55;
+    color: #ffe0a6;
+    font-weight: bold;
+    font-size: 20px;
     margin: 0 auto;
-    display: block;
     border: none;
     outline: none;
     padding: 5px;
     border-radius: 5px;
+}
+
+.richiesta-dati select  {
+    margin-top: 30px;
 }
 
 .richiesta-dati button {
@@ -98,14 +120,24 @@ body {
 
 
 /* DATI UTENTE */
+
 .dati-passeggero {
+    background: url('../img/bg.jpg');
     position: relative;
     height: 100%;
     width: 100%;
 }
 
+.filter {
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 238, 170, .2);
+}
+
 /* BIGLIETTO */
+
 .dati-passeggero .biglietto {
+    font-family: monospace;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -113,7 +145,8 @@ body {
     justify-content: flex-end;
     height: 350px;
     width: 950px;
-    background: #fda;
+    background: #ffe0a6;
+    clip-path: polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0% calc(100% - 30px), 0% 30px);
 }
 
 /* BANDA  */
@@ -121,15 +154,45 @@ body {
 .banda {
     margin-left: 80px;
     flex-basis: 80px;
-    background: rgb(19, 22, 3);
+    background: rgb(64, 39, 29);
 }
+
+/* COMPAGNIA */
+
+.banda-compagnia {
+    position: absolute;
+    bottom: 0;
+    left: 160px;
+    width: 790px;
+    height: 60px;
+    background: #dd6c55;
+}
+.banda-compagnia:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 40px solid #ffe0a6;
+    border-right: 50px solid #dd6c55;
+    width: 450px;
+}
+
+.banda-compagnia h1 {
+    color: #ffe0a6;
+    position: absolute;
+    font-size: 35px;
+    right: 22px;
+    bottom: 12px;
+}
+  
 
 /* BIGLIETTO DATI */
 
 .biglietto-dati {
     display: flex;
-    flex-grow: 1;
     height: 100%;
+    flex-grow: 1;
+    z-index: 1;
 }
 
 .biglietto-dati ul {
@@ -144,27 +207,42 @@ body {
 }
 
 .biglietto-dati .info {
-    margin-left: 60px;
     width: 40%;
+    margin-left: 50px;
 }
 
 .biglietto-dati .info-extra {
     width: 60%;
+    margin: 0 70px;
+    justify-content: center;
 }
-
 
 .dati-passeggero .info li,
 .dati-passeggero .info-extra li {
-    font-size: 21px;
+    color: #dd6c55;
+    font-size: 18px;
     font-weight: normal;
+}
+
+.dati-passeggero .info-extra li {
+    margin-bottom: 50px;
 }
 
 .dati-passeggero .info li p,
 .dati-passeggero .info-extra li p {
+    padding: 8px;
+    border-radius: 3px;
+    text-transform: capitalize;
     font-size: 21px;
     font-weight: bold;
+    background: #dd6c55;
+    color: #ffe0a6;
+}
+
+.dati-passeggero .info-extra #costo-tot {
+    width: 200px;
 }
 
 .dati-passeggero .info-extra #sconto {
-    font-size: 18px;
+    font-size: 16px;
 }
