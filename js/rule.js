@@ -33,14 +33,14 @@ document.getElementById('genera').addEventListener('click', function() {
     var costoTratta = km * 0.21;
 
     if ( eta === 'under18') {
-        offerta.innerHTML = 'hai diritto allo sconto under 18'
+        offerta.innerHTML = 'Biglietto under 18<br>(sconto del 20%)'
         costoTratta -= costoTratta * 0.20; 
         costoTot.innerHTML = costoTratta.toFixed(2) + ' €';       
     } else if ( eta === 'over18' ) {
-        offerta.innerHTML = 'purtroppo non vi sono sconti applicabili'
+        offerta.innerHTML = 'Biglietto standard'
         costoTot.innerHTML = costoTratta.toFixed(2) + ' €';       
     } else if ( eta === 'over65' ) {
-        offerta.innerHTML = 'hai diritto allo sconto over 65'
+        offerta.innerHTML = 'Biglietto over 65<br>(sconto del 40%)'
         costoTratta -= costoTratta * 0.40; 
         costoTot.innerHTML = costoTratta.toFixed(2) + ' €';       
 

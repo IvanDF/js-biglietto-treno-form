@@ -15,14 +15,14 @@ body {
 .hidden {
     opacity: 0;
     left: 0;
-    transition: opacity .7s,
-                left 1s;
+    transition: opacity .7s .4s,
+                left 1s .4s ease-in-out;
 }
 .show {
     opacity: 1;
     left: 45%;
-    transition: opacity .5s,
-                left 1s;
+    transition: opacity .8s,
+                left 1.5s ease-out;
 }
 
 /* MAIN */
@@ -38,28 +38,27 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-basis: 450px;
+    flex-basis: 500px;
     box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, .5);
     background: #ffe0a6;
 }
 
 .richiesta-title {
     font-family: monospace;
-    justify-self: self-start;
     color: #dd6c55;
-    line-height: .7;
-    font-size: 39px;
+    line-height: .8;
+    font-size: 42px;
     font-weight: normal;
-    text-align: center;
     letter-spacing: 4px;
-    padding: 0 20px;
-    margin-bottom: 30px;
+    align-self: center;
+    justify-self: flex-start;
+    margin-bottom: 40px;
 }
 
 .richiesta-title span {
     font-weight: bold;
     letter-spacing: 0;
-    font-size: 42px;
+    font-size: 45px;
 }
 
 .richiesta-dati input {
@@ -76,6 +75,7 @@ body {
     font-size: 23px;
     border: none;
     outline: none;
+    margin: 20px 0;
 }
 
 .richiesta-dati input::placeholder {
@@ -89,15 +89,17 @@ body {
 }
 
 .richiesta-dati label  {
+    display: block;
     font-size: 20px;
     text-align: center;
     color: #dd6c55;
-    margin-top: 20px;
+    margin-top: 25px;
 
 }
 
 .richiesta-dati select,
 .richiesta-dati button {
+    display: block;
     background: #dd6c55;
     color: #ffe0a6;
     font-weight: bold;
@@ -109,16 +111,18 @@ body {
     border-radius: 5px;
 }
 
-.richiesta-dati select  {
-    margin-top: 0;
-    margin-bottom: 20px;
-
+.richiesta-dati select   {
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    -webkit-appearance: none;
 }
 
 .richiesta-dati button {
     cursor: pointer;
     width: 180px;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px;
 }
 
@@ -156,14 +160,14 @@ body {
 /* BANDA  */
 
 .banda {
-    margin-left: 80px;
+    margin-left: 70px;
     flex-basis: 80px;
     background: rgb(64, 39, 29);
 }
 
 .banda #ora-creazione {
     position: relative;
-    top: 75%;
+    top: 90%;
     left: 0;
     width: 100%;
     color: #ffe0a6;
@@ -175,8 +179,8 @@ body {
 .banda-compagnia {
     position: absolute;
     bottom: 0;
-    left: 160px;
-    width: 790px;
+    left: 150px;
+    width: 805px;
     height: 60px;
     background: #dd6c55;
 }
@@ -194,10 +198,9 @@ body {
     color: #ffe0a6;
     position: absolute;
     font-size: 35px;
-    right: 22px;
-    bottom: 12px;
+    right: 35px;
+    bottom: 15px;
 }
-  
 
 /* BIGLIETTO DATI */
 
@@ -216,16 +219,16 @@ body {
 .biglietto-dati .info-extra {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .biglietto-dati .info {
-    width: 40%;
-    margin-left: 50px;
+    width: 50%;
+    margin-left: 30px;
 }
 
 .biglietto-dati .info-extra {
-    width: 60%;
+    width: 50%;
     margin: 0 70px;
     justify-content: center;
 }
@@ -254,8 +257,4 @@ body {
 
 .dati-passeggero .info-extra #costo-tot {
     width: 200px;
-}
-
-.dati-passeggero .info-extra #sconto {
-    font-size: 16px;
 }
